@@ -1,0 +1,23 @@
+﻿<Page x:Class="WpfApp13.DepartmentsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Кафедры">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="Pink">
+        <DataGrid x:Name="departmentsDataGrid" AutoGenerateColumns="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название кафедры" Binding="{Binding DepartmentName}" />
+                <DataGridTextColumn Header="Руководитель" Binding="{Binding HeadOfDepartment}" />
+                <DataGridTextColumn Header="Контактный номер" Binding="{Binding ContactNumber}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Style="{StaticResource CustomButtonStyle}" Click="BackButton_Click"/>
+    </Grid>
+</Page>

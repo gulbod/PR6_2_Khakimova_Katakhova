@@ -1,0 +1,40 @@
+﻿<Page x:Class="WpfApp13.UserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Окно Пользователя">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="DeepPink">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Имя" Style="{StaticResource CustomTextBlockStyle}" Grid.Row="0" Grid.Column="0"/>
+        <TextBox x:Name="firstNameText" Style="{StaticResource CustomTextBoxStyle}" Grid.Row="0" Grid.Column="1" IsReadOnly="True"/>
+
+        <TextBlock Text="Фамилия" Style="{StaticResource CustomTextBlockStyle}" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="lastNameText" Style="{StaticResource CustomTextBoxStyle}" Grid.Row="1" Grid.Column="1" IsReadOnly="True"/>
+
+        <TextBlock Text="Логин" Style="{StaticResource CustomTextBlockStyle}" Grid.Row="2" Grid.Column="0"/>
+        <TextBox x:Name="loginText" Style="{StaticResource CustomTextBoxStyle}" Grid.Row="2" Grid.Column="1" IsReadOnly="True"/>
+
+        <TextBlock Text="Пароль" Style="{StaticResource CustomTextBlockStyle}" Grid.Row="3" Grid.Column="0"/>
+        <TextBox x:Name="passwordText" Style="{StaticResource CustomTextBoxStyle}" Grid.Row="3" Grid.Column="1" IsReadOnly="True"/>
+
+        <TextBlock Text="Телефон" Style="{StaticResource CustomTextBlockStyle}" Grid.Row="4" Grid.Column="0"/>
+        <TextBox x:Name="phoneText" Style="{StaticResource CustomTextBoxStyle}" Grid.Row="4" Grid.Column="1" IsReadOnly="True"/>
+    </Grid>
+</Page>

@@ -1,0 +1,23 @@
+﻿<Page x:Class="WpfApp13.SessionsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Сессии">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="Pink">
+        <DataGrid x:Name="sessionsDataGrid" AutoGenerateColumns="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название сессии" Binding="{Binding SessionName}" />
+                <DataGridTextColumn Header="Дата начала" Binding="{Binding StartDate}" />
+                <DataGridTextColumn Header="Дата окончания" Binding="{Binding EndDate}" />
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Style="{StaticResource CustomButtonStyle}" Click="BackButton_Click"/>
+    </Grid>
+</Page>

@@ -1,0 +1,34 @@
+﻿<Page x:Class="WpfApp13.TeachersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="clr-namespace:WpfApp13"
+      Title="Преподаватели">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <local:PathToImageConverter x:Key="PathToImageConverter"/>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="Pink">
+        <DataGrid x:Name="teachersDataGrid" AutoGenerateColumns="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Отдел" Binding="{Binding Department}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" />
+                <DataGridTemplateColumn Header="Фото">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding PhotoPath, Converter={StaticResource PathToImageConverter}}" Width="50" Height="50"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить Фото" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Style="{StaticResource CustomButtonStyle}" Click="AddPhotoButton_Click"/>
+        <Button Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Style="{StaticResource CustomButtonStyle}" Click="BackButton_Click"/>
+    </Grid>
+</Page>
